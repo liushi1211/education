@@ -105,4 +105,10 @@ public interface TbClassMapper {
     ClassDetail getDetailById(Integer classId);
 
     List<ClassInstance> queryFavoriteClass(Integer id);
+
+    void conversionClass(@Param("classId") Integer classId, @Param("userId")Integer userId);
+
+    List<ClassInstance> getConversionClass(QueryClassDto queryClassDto);
+
+    void commitLearn(Integer classId);
 }

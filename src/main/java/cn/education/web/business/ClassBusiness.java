@@ -2,6 +2,8 @@ package cn.education.web.business;
 
 import cn.education.web.common.JsonResponse;
 import cn.education.web.common.PageResponse;
+import cn.education.web.model.TbChapter;
+import cn.education.web.model.dto.AddCommentDto;
 import cn.education.web.model.dto.QueryClassDto;
 import cn.education.web.model.vo.ClassDetail;
 import cn.education.web.model.vo.ClassInstance;
@@ -49,4 +51,38 @@ public interface ClassBusiness {
      */
     PageResponse<CommentDto> getCommentByClassId(QueryClassDto queryClassDto);
 
+    /**
+     * 兑换课程
+     * @param queryClassDto
+     * @return
+     */
+    JsonResponse<Boolean> conversionClass(QueryClassDto queryClassDto);
+
+    /**
+     * 添加评论
+     * @param addCommentDto
+     * @return
+     */
+    JsonResponse<Boolean> commentClass(AddCommentDto addCommentDto);
+
+    /**
+     * 查询兑换课程记录
+     * @param queryClassDto
+     * @return
+     */
+    PageResponse<ClassInstance> getConversionClass(QueryClassDto queryClassDto);
+
+    /**
+     * 获取下载 播放 url
+     * @param chapter
+     * @return
+     */
+    JsonResponse<String> getDownLoanUrl(TbChapter chapter);
+
+    /**
+     * 提交学习记录
+     * @param queryClassDto
+     * @return
+     */
+    JsonResponse<Boolean> commitLearn(QueryClassDto queryClassDto);
 }

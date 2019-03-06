@@ -22,7 +22,14 @@ public class ClassDetail {
 
     private Integer totalScore;
 
+    /**
+     * 是否兑换了该课程
+     */
+    private Boolean conversion;
+
     private List<ChapterDto> chapters;
+
+    private String detailUrl;
 
     private Date createTime;
 
@@ -112,5 +119,21 @@ public class ClassDetail {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public String getDetailUrl() {
+        return detailUrl;
+    }
+
+    public void setDetailUrl(String detailUrl) {
+        this.detailUrl = detailUrl;
+    }
+
+    public Boolean getConversion() {
+        return conversion;
+    }
+
+    public void setConversion(Boolean conversion) {
+        this.conversion = conversion;
     }
 }

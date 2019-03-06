@@ -10,6 +10,10 @@ public class JsonResponse<T> {
         this(ErrorCode.SUCCESS,null);
     }
 
+    public JsonResponse(ErrorCode errorCode) {
+        this(errorCode,null);
+    }
+
     public JsonResponse(String errorCode, String desc, T result) {
         this.desc = desc;
         this.errorCode = errorCode;

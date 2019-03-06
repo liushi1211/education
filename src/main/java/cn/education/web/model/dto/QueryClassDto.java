@@ -2,9 +2,6 @@ package cn.education.web.model.dto;
 
 import cn.education.web.common.PageParam;
 
-/**
- * Created by liushi on 19/2/27.
- */
 public class QueryClassDto extends PageParam {
 
     private Integer id;
