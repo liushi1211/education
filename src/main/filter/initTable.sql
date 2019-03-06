@@ -47,9 +47,10 @@ CREATE TABLE `tb_class` (
   `class_desc` varchar(256) NOT NULL,
   `lang_type` varchar(45) NOT NULL,
   `image_url` varchar(128) NOT NULL,
-  `total_score` smallint(6) NOT NULL DEFAULT '100',
+  `total_score` smallint(6) NOT NULL DEFAULT '0',
   `recommend` tinyint(4) NOT NULL DEFAULT '0',
   `learn_time` int(11) NOT NULL DEFAULT '0',
+  `detail_url` varchar(128) DEFAULT NULL,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -68,6 +69,22 @@ CREATE TABLE `tb_comment` (
   `class_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `content` varchar(256) NOT NULL,
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tb_conversion`
+--
+
+DROP TABLE IF EXISTS `tb_conversion`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_conversion` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `class_id` int(11) NOT NULL,
+  `user_id` varchar(45) NOT NULL,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
@@ -102,7 +119,7 @@ CREATE TABLE `tb_learn_record` (
   `user_id` int(11) NOT NULL,
   `learn_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,4 +175,4 @@ CREATE TABLE `tb_user` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-04 20:25:31
+-- Dump completed on 2019-03-06 22:20:46
