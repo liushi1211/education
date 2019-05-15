@@ -31,4 +31,17 @@ public class UserController {
         return new JsonResponse<Boolean>(ErrorCode.SUCCESS,true);
     }
 
+
+    /**
+     *  签到
+     * @param user
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "/signIn",method = RequestMethod.POST)
+    public JsonResponse<Boolean> signIn(@RequestBody TbUser user){
+        userBusiness.signIn(user);
+        return new JsonResponse<Boolean>(ErrorCode.SUCCESS,true);
+    }
+
 }

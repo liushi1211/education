@@ -152,6 +152,8 @@ CREATE TABLE `tb_user` (
   `wx_avator` varchar(256) NOT NULL,
   `role` tinyint(4) NOT NULL DEFAULT '0',
   `score` smallint(6) NOT NULL DEFAULT '100',
+  `sign_in_number` tinyint NOT NULL DEFAULT '0',
+  `sign_in_time` timestamp DEFAULT NULL,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
