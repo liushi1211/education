@@ -39,6 +39,9 @@ public class ClassBusinessImpl extends BaseImpl implements ClassBusiness {
     @Resource
     private TbLearnRecordMapper learnRecordMapper;
 
+    @Resource
+    private TbFavoriteMapper favoriteMapper;
+
 
     @Override
     public PageResponse<ClassInstance> queryClass(QueryClassDto queryClassDto) {
@@ -191,7 +194,24 @@ public class ClassBusinessImpl extends BaseImpl implements ClassBusiness {
         learnRecordMapper.insertSelective(learnRecord);
         classMapper.commitLearn(queryClassDto.getId());
 
-        return null;
+        return new JsonResponse<>();
+    }
+
+    @Override
+    public JsonResponse<Boolean> favoriteClass(QueryClassDto queryClassDto) {
+        TbUser user = getUserByWxNo(queryClassDto.getWxNo());
+        if(null == user){
+            return new JsonResponse<>(ErrorCode.USER_NOT_EXIST);
+        }
+        TbClass tbClass = classMapper.selectByPrimaryKey(queryClassDto.getId());
+        if(null == tbClass){
+            return new JsonResponse<>(ErrorCode.CLASS_NOT_EXIST);
+        }
+        TbFavorite favorite = new TbFavorite();
+        favorite.setClassId(tbClass.getId());
+        favorite.setUserId(user.getId());
+        favoriteMapper.insertSelective(favorite);
+        return new JsonResponse<>();
     }
 
     private TbUser getUserByWxNo(String wxNo){

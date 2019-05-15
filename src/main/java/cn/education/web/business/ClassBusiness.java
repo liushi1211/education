@@ -85,4 +85,11 @@ public interface ClassBusiness {
      * @return
      */
     JsonResponse<Boolean> commitLearn(QueryClassDto queryClassDto);
+
+    /**
+     * 收藏课程
+     * @param queryClassDto
+     * @return
+     */
+    JsonResponse<Boolean> favoriteClass(QueryClassDto queryClassDto);
 }

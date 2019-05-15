@@ -56,6 +56,17 @@ public class ClassController {
     }
 
     /**
+     * 收藏课程
+     * @param queryClassDto
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "/favoriteClass",method = RequestMethod.POST)
+    public JsonResponse<Boolean> favoriteClass(@RequestBody QueryClassDto queryClassDto){
+        return classBusiness.favoriteClass(queryClassDto);
+    }
+
+    /**
      * 获取课程详情
      * @param classId
      * @return
