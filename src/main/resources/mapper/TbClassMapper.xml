@@ -417,6 +417,12 @@
       <if test="recommend != null">
         and recommend = #{recommend}
       </if>
+      <if test="ids != null">
+        and id in
+        <foreach collection="ids" separator="," close=")" open="(" item="item">
+          #{item}
+        </foreach>
+      </if>
     </where>
   </select>
 

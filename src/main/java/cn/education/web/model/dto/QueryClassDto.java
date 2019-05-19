@@ -2,9 +2,13 @@ package cn.education.web.model.dto;
 
 import cn.education.web.common.PageParam;
 
+import java.util.List;
+
 public class QueryClassDto extends PageParam {
 
     private Integer id;
+
+    private List<Integer> ids;
 
     private String langType;
 
@@ -52,5 +56,13 @@ public class QueryClassDto extends PageParam {
 
     public void setWxNo(String wxNo) {
         this.wxNo = wxNo;
+    }
+
+    public List<Integer> getIds() {
+        return ids;
+    }
+
+    public void setIds(List<Integer> ids) {
+        this.ids = ids;
     }
 }
