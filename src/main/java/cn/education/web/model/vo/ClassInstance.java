@@ -29,6 +29,8 @@ public class ClassInstance {
      */
     private Integer totalLearnTimes;
 
+    private String url;
+
 
     public Integer getId() {
         return id;
@@ -92,5 +94,13 @@ public class ClassInstance {
 
     public void setTotalLearnTimes(Integer totalLearnTimes) {
         this.totalLearnTimes = totalLearnTimes;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

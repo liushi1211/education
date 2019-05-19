@@ -405,6 +405,7 @@
     lang_type as langType,
     total_score as totalScore,
     image_url as imageUrl,
+    url,
     learn_time as totalLearnTimes from tb_class
     <where>
       <if test="id != null">
@@ -437,6 +438,7 @@ select
     c.lang_type as langType,
     c.total_score as totalScore,
     c.image_url as imageUrl,
+    c.url,
     r.learn_time as learnTime
     from tb_class c RIGHT JOIN tb_learn_record r ON c.id = r.class_id
     where r.user_id=#{0} and  r.learn_time = (select max(learn_time) from tb_learn_record tr where tr.class_id=r.class_id and tr.user_id=r.user_id)
@@ -468,6 +470,7 @@ select
     c.lang_type as langType,
     c.total_score as totalScore,
     c.image_url as imageUrl,
+    c.url,
     c.learn_time as totalLearnTimes
     from tb_class c RIGHT JOIN tb_favorite r ON c.id = r.class_id
     where r.user_id=#{0} order by r.create_time desc
@@ -485,6 +488,7 @@ select
     c.lang_type as langType,
     c.total_score as totalScore,
     c.image_url as imageUrl,
+    c.url,
     c.learn_time as totalLearnTimes from tb_conversion v LEFT JOIN tb_class c on v.class_id=c.id LEFT JOIN tb_user u on v.user_id=u.id
     where u.wx_no = #{wxNo} ORDER BY v.create_time desc
   </select>

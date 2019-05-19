@@ -64,7 +64,7 @@ public class UserBusinessImpl extends BaseImpl implements UserBusiness {
             return;
         }
         int num=1;
-        if(isYesterday(user1.getSignInTime())){
+        if(isYesterday(user1.getSignInTime()) && user1.getSignInNumber() < 7){
             num = user1.getSignInNumber()+1;
         }
         TbUser updateUser = new TbUser();
