@@ -51,6 +51,7 @@ CREATE TABLE `tb_class` (
   `recommend` tinyint(4) NOT NULL DEFAULT '0',
   `learn_time` int(11) NOT NULL DEFAULT '0',
   `detail_url` varchar(128) DEFAULT NULL,
+  `url` varchar(128) DEFAULT NULL,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)

@@ -31,6 +31,8 @@ public class ClassDetail {
 
     private String detailUrl;
 
+    private String url;
+
     private Date createTime;
 
     public String getClassName() {
@@ -135,5 +137,13 @@ public class ClassDetail {
 
     public void setConversion(Boolean conversion) {
         this.conversion = conversion;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

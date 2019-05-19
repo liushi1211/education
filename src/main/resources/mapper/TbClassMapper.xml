@@ -16,6 +16,7 @@
     <result column="recommend" property="recommend" jdbcType="TINYINT" />
     <result column="learn_time" property="learnTime" jdbcType="INTEGER" />
     <result column="detail_url" property="detailUrl" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -386,6 +387,7 @@
     <result column="lang_type" property="langType" jdbcType="VARCHAR" />
     <result column="image_url" property="imageUrl" jdbcType="VARCHAR" />
     <result column="detail_url" property="detailUrl" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
     <result column="total_score" property="totalScore" jdbcType="SMALLINT" />
     <result column="learn_time" property="learnTime" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
